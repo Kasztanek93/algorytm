@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<title>Proste algorytmy</title>
+	
+	<meta name="description" content="Opis w Google" />
+	<meta name="keywords" content="słowa, kluczowe, wypisane, po, porzecinku" />
+
+	
+	<style>
+body{
+	padding-left:100px;
+	padding-right: 100px;
+	font-family: arial;
+	}
+
+	</style>
+	
+<script>
+	function f1()
+	{
+		var a = document.getElementById("a").value;
+		var b = document.getElementById("b").value;
+		var i;
+		var s = "";
+		
+		for(i=a; i<=b; i++) s = s + i + " ";
+		
+		document.getElementById("wynik").innerHTML = s;
+		
+	}
+
+</script>
+	
+</head>
+
+<body>
+<h1> Dla danych dwóch liczb naturalnych a  i b  należy znaleźć największą liczbę naturalną c, która dzieli bez reszty liczbę a  i dzieli bez reszty liczbę b. </h1>
+
+<center>
+<h2>Schemat blokowy</h2>	
+<img src = "algorytm.jpg">
+</center>
+
+<h2>Kod cpp</h2>
+
+#include <iostream> <br>
+
+using namespace std; <br>
+
+int main( )<br>
+{<br>
+  unsigned int a, b;<br>
+
+  cin >> a >> b;<br>
+  while( a != b )<br>
+    if( a < b ) b -= a; else a -= b; <br>
+  cout << a << endl; <br>
+  return 0; <br>
+} 
+
+<center>
+<h2>Skrypt JS</h2>
+<p>Skrypt JS drukuje liczby z przedziału a, b</p><br>
+Podaj a 
+<input type = "number" id = "a">
+Podaj b
+<input type = "number" id = "b">
+<input type = "button" value = "Pokaż" onclick = "f1()">
+<br>
+<div id = "wynik"></div>
+</center>
+<br>
+<h2>Skrypt JS</h2>
+<img src="skryptjs.jpg">
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+</body>
+</html>
